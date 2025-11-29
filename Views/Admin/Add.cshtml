@@ -1,0 +1,29 @@
+﻿@model PersonalBlog.Models.Articles
+
+@{
+    ViewData["Title"] = "Add Article";
+}
+
+<h1>Add New Article</h1>
+
+<form asp-action="Add" method="post">
+    <p>
+        <label>Title:</label><br />
+        <input asp-for="Title" />
+        <span asp-validation-for="Title" style="color:red"></span>
+    </p>
+    <p>
+        <label>Content:</label><br />
+        <textarea asp-for="Content" rows="5" cols="50"></textarea>
+        <span asp-validation-for="Content" style="color:red"></span>
+    </p>
+    <p>
+        <label>Published Date:</label><br />
+        <input asp-for="PublishedDate" type="date" />
+        <span asp-validation-for="PublishedDate" style="color:red"></span>
+    </p>
+    <p>
+        <button type="submit">Save</button>
+        <a href="@Url.Action("Dashboard", "Admin")">Cancel</a>
+    </p>
+</form>

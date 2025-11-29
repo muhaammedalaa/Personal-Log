@@ -1,0 +1,8 @@
+﻿@model PersonalBlog.Models.Articles
+
+<h1>@Model.Title</h1>
+<p>@Model.Content</p>
+<small>Published: @Model.PublishedDate.ToString("dd MMM yyyy")</small>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+<a asp-action="Index" asp-controller="Home">Back to Home</a>

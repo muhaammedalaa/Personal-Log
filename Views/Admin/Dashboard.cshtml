@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PersonalBlog.Models.Articles>
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard</h1>
+
+<div>
+    <h4>Articles</h4>
+    <hr />
+    @foreach (var article in Model)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => article.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(m => article.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => article.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(m => article.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => article.Content)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(m => article.Content)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(m => article.PublishedDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(m => article.PublishedDate)
+            </dd>
+        </dl>
+        <div>
+            @Html.ActionLink("Add", "Add", new { id = article.Id }) |
+            @Html.ActionLink("Edit", "Edit", new { id = article.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = article.Id })
+        </div>
+        <hr />
+    }
+</div>

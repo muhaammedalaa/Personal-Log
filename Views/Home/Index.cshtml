@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PersonalBlog.Models.Articles>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Personal Blog</h1>
+
+<ul>
+    @foreach (var article in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Article", new { id = article.Id })">
+                @article.Title
+            </a>
+            <span> - @article.PublishedDate.ToShortDateString()</span>
+        </li>
+    }
+</ul>

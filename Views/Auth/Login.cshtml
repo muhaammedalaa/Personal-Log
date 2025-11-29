@@ -1,0 +1,19 @@
+﻿@model PersonalBlog.Models.Login
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <p>
+        <label>Username:</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username" style="color:red"></span>
+    </p>
+    <p>
+        <label>Password:</label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" style="color:red"></span>
+    </p>
+    <p>
+        <button type="submit">Login</button>
+    </p>
+</form>
